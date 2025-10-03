@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual env
+.instaflow310/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Output / generated files
+output_images/
+Real_Images/
+instaflow_fid_fake_512/
+data/
