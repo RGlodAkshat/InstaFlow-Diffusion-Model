@@ -1,0 +1,13 @@
+index,image_path,prompt,clip_score
+1,Output_Images/8bit)qantized_clip_01.png,a cute dog,19.395927
+2,Output_Images/8bit)qantized_clip_02.png,a beautiful mountain,21.351572
+3,Output_Images/8bit)qantized_clip_03.png,a bowl of fruit,22.975067
+4,Output_Images/8bit)qantized_clip_04.png,a happy cat,18.247597
+5,Output_Images/8bit)qantized_clip_05.png,a sunset over the ocean,23.738823
+6,Output_Images/8bit)qantized_clip_06.png,a man riding a bike,21.781580
+7,Output_Images/8bit)qantized_clip_07.png,a delicious pizza,22.632364
+8,Output_Images/8bit)qantized_clip_08.png,a child playing football,22.758011
+9,Output_Images/8bit)qantized_clip_09.png,a red sports car,22.516544
+10,Output_Images/8bit)qantized_clip_10.png,a flower in the rain,27.141159
+
+avg,,,22.253864

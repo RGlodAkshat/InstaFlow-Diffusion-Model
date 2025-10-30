@@ -1,0 +1,42 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Ignore local environment folders
+env/
+venv/
+instaflow_cpu/
+.instaflow_cpu/
+*.egg-info/
+*.idea/
+.vscode/
+
+# Ignore model artifacts and outputs
+artifacts_onnx/
+out/
+out_images/
+Output_Images/
+runs/
+
+# Ignore large generated files (models, checkpoints, weights)
+*.onnx
+*.data
+*.safetensors
+*.ckpt
+*.pt
+*.bin
+
+# Ignore temporary and intermediate data
+tmp/
+tmp_quant/
+*.tmp
+*.bak
+*.DS_Store
+Thumbs.db
+
+# Ignore notebooks checkpoints
+.ipynb_checkpoints/
+

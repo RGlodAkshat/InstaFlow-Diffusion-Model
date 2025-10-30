@@ -1,0 +1,13 @@
+index,image_path,prompt,clip_score
+1,Output_Images/clip_01.png,a cute dog,23.482601
+2,Output_Images/clip_02.png,a beautiful mountain,22.395870
+3,Output_Images/clip_03.png,a bowl of fruit,23.266640
+4,Output_Images/clip_04.png,a happy cat,18.415298
+5,Output_Images/clip_05.png,a sunset over the ocean,23.705929
+6,Output_Images/clip_06.png,a man riding a bike,19.801579
+7,Output_Images/clip_07.png,a delicious pizza,22.462486
+8,Output_Images/clip_08.png,a child playing football,24.022867
+9,Output_Images/clip_09.png,a red sports car,23.099577
+10,Output_Images/clip_10.png,a flower in the rain,26.655272
+
+avg,,,22.730812
