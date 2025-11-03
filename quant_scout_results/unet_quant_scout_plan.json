@@ -1,0 +1,5675 @@
+{
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "tolerances": {
+    "mse": 1e-05,
+    "max_abs": 0.05,
+    "1_minus_cos": 0.0005
+  },
+  "modes_tested": [
+    "W8A16",
+    "W8A8",
+    "W4A16",
+    "W4A8"
+  ],
+  "samples": [
+    {
+      "prompt": "a crisp portrait of a golden retriever in studio lighting",
+      "seed": 123
+    },
+    {
+      "prompt": "a futuristic cityscape at twilight, ultra-detailed, cinematic lighting",
+      "seed": 321
+    },
+    {
+      "prompt": "a bowl of fresh strawberries on a rustic wooden table, natural light",
+      "seed": 777
+    },
+    {
+      "prompt": "a watercolor painting of a lighthouse on a stormy sea",
+      "seed": 42
+    }
+  ],
+  "layers": [
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W4A8",
+      "w_bits": 4,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.6657e-06,
+        "mae": 0.00033793310000000004,
+        "max_abs": 0.0271066129,
+        "cos": 0.99999899375
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3162.615
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.0.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W4A8",
+      "w_bits": 4,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.246775e-06,
+        "mae": 0.001557599175,
+        "max_abs": 0.033045856275,
+        "cos": 0.99999557455
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2756.3625
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W4A8",
+      "w_bits": 4,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.004419429525,
+        "mae": 0.040434041525,
+        "max_abs": 0.542837008825,
+        "cos": 0.9976874436250001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2696.5225
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.proj_out",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W4A8",
+      "w_bits": 4,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0186889926,
+        "mae": 0.06249496525,
+        "max_abs": 1.18922415375,
+        "cos": 0.9902635773999999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2732.9875
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.2.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.4824999999999996e-08,
+        "mae": 0.000117188775,
+        "max_abs": 0.002339959125,
+        "cos": 0.9999999797
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3362.105
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.0.time_emb_proj",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.2379999999999998e-07,
+        "mae": 0.000274471275,
+        "max_abs": 0.0026903674,
+        "cos": 0.9999999189
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2784.645
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.515e-07,
+        "mae": 0.00012664777500000002,
+        "max_abs": 0.009717891900000001,
+        "cos": 0.9999999141
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3166.0775000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.78975e-07,
+        "mae": 0.000218516575,
+        "max_abs": 0.0071391724,
+        "cos": 0.9999999047
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2847.585
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.0.time_emb_proj",
+      "type": "Linear",
+      "params": 819840,
+      "shape": "(640, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.83075e-07,
+        "mae": 0.0002865387,
+        "max_abs": 0.00627268105,
+        "cos": 0.999999891525
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2734.77
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.5622500000000003e-07,
+        "mae": 0.00024904475,
+        "max_abs": 0.007352638975,
+        "cos": 0.99999986035
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2713.8725
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.resnets.1.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.81275e-07,
+        "mae": 0.0002440309,
+        "max_abs": 0.00649858265,
+        "cos": 0.999999851875
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2806.795
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.98375e-07,
+        "mae": 0.000369614125,
+        "max_abs": 0.012395203125,
+        "cos": 0.999999831025
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2815.1675
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.0045e-07,
+        "mae": 0.000422983575,
+        "max_abs": 0.0077547580000000005,
+        "cos": 0.999999817725
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2812.1975
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.1.time_emb_proj",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.192e-07,
+        "mae": 0.0004458704,
+        "max_abs": 0.004862964175,
+        "cos": 0.9999998075250001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2803.56
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.237e-07,
+        "mae": 0.00036294215,
+        "max_abs": 0.00540842115,
+        "cos": 0.9999998136
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2731.305
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.1.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.254e-07,
+        "mae": 0.000280101475,
+        "max_abs": 0.00617775415,
+        "cos": 0.999999827125
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2766.25
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.3.resnets.1.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.297e-07,
+        "mae": 0.00025637595000000004,
+        "max_abs": 0.005864527075000001,
+        "cos": 0.999999821725
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2762.9075000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.0.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.29775e-07,
+        "mae": 0.0004043846,
+        "max_abs": 0.00574321115,
+        "cos": 0.99999980245
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3512.745
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.resnets.0.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.897e-07,
+        "mae": 0.00031665957500000004,
+        "max_abs": 0.0078853704,
+        "cos": 0.999999797125
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2787.9975
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.9622499999999996e-07,
+        "mae": 0.000471260875,
+        "max_abs": 0.004333477475,
+        "cos": 0.999999758175
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2755.015
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.10525e-07,
+        "mae": 0.000383802525,
+        "max_abs": 0.009221127249999999,
+        "cos": 0.9999997467
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3495.3025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.1.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.637e-07,
+        "mae": 0.000445548775,
+        "max_abs": 0.00899682845,
+        "cos": 0.9999997342
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3477.4449999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.2.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.96575e-07,
+        "mae": 0.000472463175,
+        "max_abs": 0.0084712,
+        "cos": 0.9999997174249999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3430.0125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.1.time_emb_proj",
+      "type": "Linear",
+      "params": 819840,
+      "shape": "(640, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.559e-07,
+        "mae": 0.000538364975,
+        "max_abs": 0.007513031375,
+        "cos": 0.999999633675
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2738.6275
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.348499999999999e-07,
+        "mae": 0.00038084877500000003,
+        "max_abs": 0.006432373050000001,
+        "cos": 0.9999996703
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2808.6125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.18475e-07,
+        "mae": 0.000523684725,
+        "max_abs": 0.012384437,
+        "cos": 0.999999568575
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2705.5775
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.57825e-07,
+        "mae": 0.00046731945,
+        "max_abs": 0.00953206795,
+        "cos": 0.999999595
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2745.89
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.2695e-07,
+        "mae": 0.000553254625,
+        "max_abs": 0.01201936045,
+        "cos": 0.999999537775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3476.3824999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.438000000000001e-07,
+        "mae": 0.0006704573250000001,
+        "max_abs": 0.0115830898,
+        "cos": 0.9999994458
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2783.41
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.487e-07,
+        "mae": 0.000581775975,
+        "max_abs": 0.011249497525,
+        "cos": 0.9999994955
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2752.1575000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 9.132750000000001e-07,
+        "mae": 0.000682464475,
+        "max_abs": 0.0093587823,
+        "cos": 0.9999994061249999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2777.9375
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 9.5585e-07,
+        "mae": 0.000614433575,
+        "max_abs": 0.013976827249999999,
+        "cos": 0.9999994696
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3511.465
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.0237e-06,
+        "mae": 0.00061504395,
+        "max_abs": 0.015591532,
+        "cos": 0.999999434275
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3497.255
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.04565e-06,
+        "mae": 0.000777868825,
+        "max_abs": 0.011088076975,
+        "cos": 0.99999935545
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2765.4375
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.049075e-06,
+        "mae": 0.000766839275,
+        "max_abs": 0.00975308565,
+        "cos": 0.9999993056
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2788.7125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.0743e-06,
+        "mae": 0.000642745375,
+        "max_abs": 0.01317204535,
+        "cos": 0.9999992869
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2736.955
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.10605e-06,
+        "mae": 0.000675115425,
+        "max_abs": 0.0143935685,
+        "cos": 0.999999298925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2714.4125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.11255e-06,
+        "mae": 0.0005982535249999999,
+        "max_abs": 0.01377060075,
+        "cos": 0.999999391025
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2752.1075
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.187625e-06,
+        "mae": 0.00055408065,
+        "max_abs": 0.012475201875000001,
+        "cos": 0.99999937085
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2728.365
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.1968e-06,
+        "mae": 0.00059130955,
+        "max_abs": 0.01363212615,
+        "cos": 0.999999324175
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2686.95
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.26425e-06,
+        "mae": 0.0006793373749999999,
+        "max_abs": 0.01467794365,
+        "cos": 0.99999924355
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2685.5975
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.279575e-06,
+        "mae": 0.000652958,
+        "max_abs": 0.018110588175,
+        "cos": 0.9999992155999999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2663.7650000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.3109e-06,
+        "mae": 0.000777107675,
+        "max_abs": 0.015626386275,
+        "cos": 0.99999919705
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2718.9475
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.380925e-06,
+        "mae": 0.000654859825,
+        "max_abs": 0.012103714049999999,
+        "cos": 0.9999992242
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2715.4700000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.4182249999999999e-06,
+        "mae": 0.000713104675,
+        "max_abs": 0.013251500225,
+        "cos": 0.999999212475
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2695.49
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.4440250000000001e-06,
+        "mae": 0.000777899975,
+        "max_abs": 0.018930807725,
+        "cos": 0.9999991015
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2700.765
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.44745e-06,
+        "mae": 0.000548735625,
+        "max_abs": 0.019576182600000002,
+        "cos": 0.9999992237499999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2707.6324999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.49405e-06,
+        "mae": 0.000531126775,
+        "max_abs": 0.023781694475,
+        "cos": 0.9999991998
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2737.145
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.51685e-06,
+        "mae": 0.000594550025,
+        "max_abs": 0.01469576175,
+        "cos": 0.99999919475
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2721.3025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.2.conv_shortcut",
+      "type": "Conv2d",
+      "params": 3278080,
+      "shape": "(1280, 2560, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.52795e-06,
+        "mae": 0.00071758775,
+        "max_abs": 0.014942795049999999,
+        "cos": 0.999999158375
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3585.6850000000004
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.5296749999999999e-06,
+        "mae": 0.00086483895,
+        "max_abs": 0.013782769425,
+        "cos": 0.999999073225
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2757.0675
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.5308249999999999e-06,
+        "mae": 0.0007522951,
+        "max_abs": 0.0247159004,
+        "cos": 0.99999909255
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2722.2475
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.566525e-06,
+        "mae": 0.000727179925,
+        "max_abs": 0.01560872795,
+        "cos": 0.99999910955
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2801.385
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.1.conv_shortcut",
+      "type": "Conv2d",
+      "params": 3278080,
+      "shape": "(1280, 2560, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.622275e-06,
+        "mae": 0.000727278475,
+        "max_abs": 0.016261875624999998,
+        "cos": 0.99999910805
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2765.15
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.83605e-06,
+        "mae": 0.000643624425,
+        "max_abs": 0.015126301925,
+        "cos": 0.999999017225
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2722.865
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.3.resnets.0.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.114225e-06,
+        "mae": 0.0005614937000000001,
+        "max_abs": 0.016353329175,
+        "cos": 0.9999989065
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2753.6175000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.128725e-06,
+        "mae": 0.000647819225,
+        "max_abs": 0.014789495625,
+        "cos": 0.9999989061750001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2787.4275
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.261425e-06,
+        "mae": 0.001075736925,
+        "max_abs": 0.019204192774999997,
+        "cos": 0.99999865395
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2726.4075
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.resnets.1.time_emb_proj",
+      "type": "Linear",
+      "params": 819840,
+      "shape": "(640, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.358125e-06,
+        "mae": 0.000990228025,
+        "max_abs": 0.0149651156,
+        "cos": 0.999998402775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2730.4175
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.622575e-06,
+        "mae": 0.0006528096000000001,
+        "max_abs": 0.019911667350000002,
+        "cos": 0.99999864045
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2744.2425
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.8056e-06,
+        "mae": 0.001152051275,
+        "max_abs": 0.01828056015,
+        "cos": 0.9999983761
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2752.2
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "time_embedding.linear_1",
+      "type": "Linear",
+      "params": 410880,
+      "shape": "(1280, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.9562250000000002e-06,
+        "mae": 0.00102645795,
+        "max_abs": 0.01799268275,
+        "cos": 0.9999984654
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2702.215
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.96775e-06,
+        "mae": 0.001182486475,
+        "max_abs": 0.021799594149999997,
+        "cos": 0.9999982224
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2698.4775
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.0243749999999997e-06,
+        "mae": 0.00080800215,
+        "max_abs": 0.027606435125,
+        "cos": 0.99999839285
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2706.8450000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.2.time_emb_proj",
+      "type": "Linear",
+      "params": 819840,
+      "shape": "(640, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.101975e-06,
+        "mae": 0.00140823315,
+        "max_abs": 0.01329617205,
+        "cos": 0.9999982109250001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2755.855
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.159575e-06,
+        "mae": 0.001305505525,
+        "max_abs": 0.0191969052,
+        "cos": 0.999998253875
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2793.6025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.3945e-06,
+        "mae": 0.00129701455,
+        "max_abs": 0.016862466925,
+        "cos": 0.999997756325
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2738.7925
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.4612e-06,
+        "mae": 0.0008732734,
+        "max_abs": 0.02788614295,
+        "cos": 0.999998174325
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2780.8725
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.482925e-06,
+        "mae": 0.0010352851,
+        "max_abs": 0.027613498275,
+        "cos": 0.999998062925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2841.1800000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.2.time_emb_proj",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.5364249999999998e-06,
+        "mae": 0.0014694586,
+        "max_abs": 0.00774231365,
+        "cos": 0.9999978374
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2829.63
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.82375e-06,
+        "mae": 0.0015114234,
+        "max_abs": 0.0178796309,
+        "cos": 0.999997938575
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2733.5075
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.297725e-06,
+        "mae": 0.001449288875,
+        "max_abs": 0.019295781875,
+        "cos": 0.9999971236
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2750.5175
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.0.conv_shortcut",
+      "type": "Conv2d",
+      "params": 3278080,
+      "shape": "(1280, 2560, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.334325e-06,
+        "mae": 0.00124977255,
+        "max_abs": 0.025726370525,
+        "cos": 0.999997573775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2743.1475
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.5580749999999996e-06,
+        "mae": 0.00113274475,
+        "max_abs": 0.028969332575,
+        "cos": 0.99999752285
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3207.7999999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.6431000000000005e-06,
+        "mae": 0.00100986115,
+        "max_abs": 0.0227567535,
+        "cos": 0.9999975128
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2716.53
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.741425e-06,
+        "mae": 0.001547649425,
+        "max_abs": 0.029392853375,
+        "cos": 0.999997318025
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3554.7324999999996
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.8211249999999995e-06,
+        "mae": 0.0013531989249999999,
+        "max_abs": 0.0246415585,
+        "cos": 0.999997351025
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2718.215
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.056925e-06,
+        "mae": 0.0017057848,
+        "max_abs": 0.019424870599999998,
+        "cos": 0.9999966512
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2758.45
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_q",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.138875e-06,
+        "mae": 0.000858494825,
+        "max_abs": 0.0221594963,
+        "cos": 0.999997354975
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2922.6125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.proj_out",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.780525e-06,
+        "mae": 0.001384619825,
+        "max_abs": 0.026896467875,
+        "cos": 0.999996761825
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2790.1549999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.872625e-06,
+        "mae": 0.001583529175,
+        "max_abs": 0.038234442475000005,
+        "cos": 0.999996359675
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2667.495
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.000725e-06,
+        "mae": 0.0019247830250000001,
+        "max_abs": 0.023945368825,
+        "cos": 0.999996502375
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2769.4925
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.5965e-06,
+        "mae": 0.001699474875,
+        "max_abs": 0.02672210335,
+        "cos": 0.999996280175
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2702.28
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.0.conv1",
+      "type": "Conv2d",
+      "params": 29492480,
+      "shape": "(1280, 2560, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.723025e-06,
+        "mae": 0.00155862015,
+        "max_abs": 0.032487843175,
+        "cos": 0.9999961512
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2803.585
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.7733e-06,
+        "mae": 0.0012880228,
+        "max_abs": 0.026479784399999998,
+        "cos": 0.9999963483000001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2755.4025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.010050000000001e-06,
+        "mae": 0.002025572125,
+        "max_abs": 0.030251830825,
+        "cos": 0.99999578535
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2755.8149999999996
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.upsamplers.0.conv",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.017325e-06,
+        "mae": 0.001298050275,
+        "max_abs": 0.04354313015,
+        "cos": 0.9999961953000001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3687.9575000000004
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.274825e-06,
+        "mae": 0.0020974871,
+        "max_abs": 0.015751739974999998,
+        "cos": 0.999995631575
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2771.165
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.3844e-06,
+        "mae": 0.0014329176,
+        "max_abs": 0.0320635289,
+        "cos": 0.999996071975
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2758.55
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.5699e-06,
+        "mae": 0.001696569475,
+        "max_abs": 0.036656096575,
+        "cos": 0.99999557155
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3505.4125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.64615e-06,
+        "mae": 0.001062991775,
+        "max_abs": 0.029523421075,
+        "cos": 0.9999960809
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2761.45
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.69205e-06,
+        "mae": 0.001232990525,
+        "max_abs": 0.024398863325000002,
+        "cos": 0.9999959817
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2737.3
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.proj_out",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.95935e-06,
+        "mae": 0.002032681475,
+        "max_abs": 0.024167831075,
+        "cos": 0.9999951586
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2699.6025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.321075e-06,
+        "mae": 0.001836592575,
+        "max_abs": 0.035298213349999996,
+        "cos": 0.999995067875
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2727.88
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.proj_out",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.516475e-06,
+        "mae": 0.001852027275,
+        "max_abs": 0.03872323315,
+        "cos": 0.999994840825
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2755.205
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.2.conv_shortcut",
+      "type": "Conv2d",
+      "params": 615040,
+      "shape": "(640, 960, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.60855e-06,
+        "mae": 0.002192558075,
+        "max_abs": 0.024839714149999997,
+        "cos": 0.9999946122250001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2757.2675
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.proj_out",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.985425e-06,
+        "mae": 0.001649491275,
+        "max_abs": 0.0469372198,
+        "cos": 0.999994946675
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2710.74
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.proj_out",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 9.170225e-06,
+        "mae": 0.001891863225,
+        "max_abs": 0.04274226725,
+        "cos": 0.999994795525
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2750.3625
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 821760,
+      "shape": "(2560, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.0094975e-05,
+        "mae": 0.00199333375,
+        "max_abs": 0.042735235775,
+        "cos": 0.999993903
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2739.5025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.0257075e-05,
+        "mae": 0.002123820175,
+        "max_abs": 0.038140775625,
+        "cos": 0.9999938816
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2756.08
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.0478e-05,
+        "mae": 0.00260028995,
+        "max_abs": 0.016990691425,
+        "cos": 0.99999440735
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2801.5325000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.0690025000000001e-05,
+        "mae": 0.00201283095,
+        "max_abs": 0.01990449055,
+        "cos": 0.999993836725
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2727.265
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.resnets.1.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.13321e-05,
+        "mae": 0.001593424375,
+        "max_abs": 0.040586791925,
+        "cos": 0.99999413605
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2845.255
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.1.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.1548e-05,
+        "mae": 0.00181062665,
+        "max_abs": 0.034198457375,
+        "cos": 0.999994022075
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2765.7325
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_k",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.1612775e-05,
+        "mae": 0.001334972825,
+        "max_abs": 0.028592208425,
+        "cos": 0.999994004975
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2781.8225
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.198575e-05,
+        "mae": 0.002212997775,
+        "max_abs": 0.05114883185,
+        "cos": 0.999992902225
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 4080.34
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.229495e-05,
+        "mae": 0.002784023325,
+        "max_abs": 0.019977614275,
+        "cos": 0.999992463775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2755.8450000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.proj_out",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.3624575e-05,
+        "mae": 0.00229145745,
+        "max_abs": 0.0417255247,
+        "cos": 0.999992571775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2734.7625
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.41711e-05,
+        "mae": 0.0025653070750000003,
+        "max_abs": 0.040602803225,
+        "cos": 0.99999104605
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2787.08
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.proj_in",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.433345e-05,
+        "mae": 0.002499036325,
+        "max_abs": 0.04839811195,
+        "cos": 0.9999909954
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2716.24
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.2.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.4521e-05,
+        "mae": 0.0019739126999999998,
+        "max_abs": 0.059384696175,
+        "cos": 0.99999226035
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3653.7200000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.45216e-05,
+        "mae": 0.0025982439,
+        "max_abs": 0.06125755235,
+        "cos": 0.99999172715
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2717.7475
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.2.conv2",
+      "type": "Conv2d",
+      "params": 3687040,
+      "shape": "(640, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.471305e-05,
+        "mae": 0.0027254743,
+        "max_abs": 0.051187925025,
+        "cos": 0.999990916125
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2755.93
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.4890025e-05,
+        "mae": 0.001940015275,
+        "max_abs": 0.054683201024999996,
+        "cos": 0.9999916182499999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2727.515
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 3281920,
+      "shape": "(5120, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.5031099999999999e-05,
+        "mae": 0.002404615725,
+        "max_abs": 0.043715741475,
+        "cos": 0.99999135665
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2733.42
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.upsamplers.0.conv",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.5140950000000001e-05,
+        "mae": 0.002591751225,
+        "max_abs": 0.049644868800000005,
+        "cos": 0.999990653775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3532.0950000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 13117440,
+      "shape": "(10240, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.5141725e-05,
+        "mae": 0.002250455225,
+        "max_abs": 0.057301417,
+        "cos": 0.9999915666
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2831.36
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.5180375e-05,
+        "mae": 0.00282652255,
+        "max_abs": 0.035415055225,
+        "cos": 0.999990593625
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2730.9300000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.proj_out",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.5234849999999999e-05,
+        "mae": 0.003035896925,
+        "max_abs": 0.026831399675,
+        "cos": 0.99999049925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2821.38
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.1.conv1",
+      "type": "Conv2d",
+      "params": 29492480,
+      "shape": "(1280, 2560, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.5916250000000002e-05,
+        "mae": 0.002429601275,
+        "max_abs": 0.048949731525,
+        "cos": 0.999990903475
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3527.9425
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.proj_out",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.599955e-05,
+        "mae": 0.0029892282999999997,
+        "max_abs": 0.031576952875,
+        "cos": 0.99998966115
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2736.7925
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.6042925e-05,
+        "mae": 0.002935095525,
+        "max_abs": 0.050708852725,
+        "cos": 0.999990325325
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2755.9275
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.upsamplers.0.conv",
+      "type": "Conv2d",
+      "params": 3687040,
+      "shape": "(640, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.60665e-05,
+        "mae": 0.0030133321999999997,
+        "max_abs": 0.03298073265,
+        "cos": 0.9999901637999999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2802.2650000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 3281920,
+      "shape": "(5120, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.6381575e-05,
+        "mae": 0.0026372696,
+        "max_abs": 0.051723133775,
+        "cos": 0.9999899357250001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2698.3450000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.2.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.648625e-05,
+        "mae": 0.0023704333500000003,
+        "max_abs": 0.06551672145000001,
+        "cos": 0.9999904594
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3458.435
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.0.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.7045525e-05,
+        "mae": 0.002168735575,
+        "max_abs": 0.045713450775,
+        "cos": 0.9999908781
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2782.2575
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.0.conv2",
+      "type": "Conv2d",
+      "params": 3687040,
+      "shape": "(640, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.715405e-05,
+        "mae": 0.00261127035,
+        "max_abs": 0.054453434450000004,
+        "cos": 0.9999899825
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2727.1775
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.795335e-05,
+        "mae": 0.001872502575,
+        "max_abs": 0.047317495575,
+        "cos": 0.99999057465
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2742.6800000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.resnets.0.conv1",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.7954149999999998e-05,
+        "mae": 0.001835580925,
+        "max_abs": 0.044347006825,
+        "cos": 0.999990739975
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2848.9625
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.1.conv2",
+      "type": "Conv2d",
+      "params": 921920,
+      "shape": "(320, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.820945e-05,
+        "mae": 0.003317193725,
+        "max_abs": 0.033442609025,
+        "cos": 0.99998865055
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2890.1099999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.0.conv2",
+      "type": "Conv2d",
+      "params": 921920,
+      "shape": "(320, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.83038e-05,
+        "mae": 0.003252814075,
+        "max_abs": 0.03552492335,
+        "cos": 0.99998839775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2803.825
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.2.conv1",
+      "type": "Conv2d",
+      "params": 29492480,
+      "shape": "(1280, 2560, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.8452575e-05,
+        "mae": 0.002434741525,
+        "max_abs": 0.0505828317,
+        "cos": 0.99998972335
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2821.0975
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.9045175e-05,
+        "mae": 0.003255757075,
+        "max_abs": 0.033083997675,
+        "cos": 0.9999875987
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2729.3825
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.proj_in",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.9329550000000002e-05,
+        "mae": 0.002793802075,
+        "max_abs": 0.067327387625,
+        "cos": 0.999988037625
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3049.3875
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.2.conv_shortcut",
+      "type": "Conv2d",
+      "params": 2458880,
+      "shape": "(1280, 1920, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.9520475000000002e-05,
+        "mae": 0.002519543775,
+        "max_abs": 0.066266398875,
+        "cos": 0.9999891251749999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3528.9425
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.9574175e-05,
+        "mae": 0.0034902704,
+        "max_abs": 0.02086057515,
+        "cos": 0.99998862715
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2781.0975
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.3.resnets.1.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 1.970665e-05,
+        "mae": 0.00207481105,
+        "max_abs": 0.0400147289,
+        "cos": 0.999989588125
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2760.7475
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.0284874999999998e-05,
+        "mae": 0.0024272386,
+        "max_abs": 0.051414420825,
+        "cos": 0.9999887670000001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2752.4175
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.resnets.1.conv1",
+      "type": "Conv2d",
+      "params": 921920,
+      "shape": "(320, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.1108300000000003e-05,
+        "mae": 0.002855786975,
+        "max_abs": 0.06031027995,
+        "cos": 0.999987412425
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2744.7725
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.resnets.1.conv2",
+      "type": "Conv2d",
+      "params": 3687040,
+      "shape": "(640, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.12957e-05,
+        "mae": 0.002505339025,
+        "max_abs": 0.070725742725,
+        "cos": 0.99998811925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2757.6625
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.2.conv1",
+      "type": "Conv2d",
+      "params": 5530240,
+      "shape": "(640, 960, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.1490025e-05,
+        "mae": 0.003249480425,
+        "max_abs": 0.05262395365,
+        "cos": 0.999986530875
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2761.1075
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.1.conv_shortcut",
+      "type": "Conv2d",
+      "params": 3278080,
+      "shape": "(1280, 2560, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.1916774999999998e-05,
+        "mae": 0.0029629297000000002,
+        "max_abs": 0.0532230958,
+        "cos": 0.999987444525
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3476.0975
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.1.conv1",
+      "type": "Conv2d",
+      "params": 1843520,
+      "shape": "(320, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.2055575e-05,
+        "mae": 0.0035859153,
+        "max_abs": 0.042466239074999995,
+        "cos": 0.999986133925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2791.77
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.0.resnets.1.conv1",
+      "type": "Conv2d",
+      "params": 29492480,
+      "shape": "(1280, 2560, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.25254e-05,
+        "mae": 0.002227889075,
+        "max_abs": 0.04730505125,
+        "cos": 0.999988253675
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2805.74
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "time_embedding.linear_2",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.277505e-05,
+        "mae": 0.003467798425,
+        "max_abs": 0.048426084225,
+        "cos": 0.9999866945
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2689.98
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 409600,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.280325e-05,
+        "mae": 0.0018677297499999999,
+        "max_abs": 0.047367073600000004,
+        "cos": 0.999988248475
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2737.085
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.341545e-05,
+        "mae": 0.002620542975,
+        "max_abs": 0.055729366824999994,
+        "cos": 0.999985598
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3489.885
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 102400,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.40198e-05,
+        "mae": 0.003827659125,
+        "max_abs": 0.0342558408,
+        "cos": 0.99998532875
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2743.2675
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.41508e-05,
+        "mae": 0.00230103245,
+        "max_abs": 0.055018686675,
+        "cos": 0.9999872066
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2698.58
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.1.conv2",
+      "type": "Conv2d",
+      "params": 3687040,
+      "shape": "(640, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.447e-05,
+        "mae": 0.003249344525,
+        "max_abs": 0.053227743125000004,
+        "cos": 0.999984464575
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2736.8725
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.proj_out",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.5291374999999998e-05,
+        "mae": 0.0032537491,
+        "max_abs": 0.057578731325,
+        "cos": 0.9999852407750001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2748.59
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.5409800000000002e-05,
+        "mae": 0.004119472075,
+        "max_abs": 0.02521958945,
+        "cos": 0.9999842889
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2789.7200000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.1.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.55268e-05,
+        "mae": 0.0030743918000000004,
+        "max_abs": 0.062018964450000005,
+        "cos": 0.999985972225
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3491.3374999999996
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.proj_in",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.5614125e-05,
+        "mae": 0.003138429875,
+        "max_abs": 0.07009592,
+        "cos": 0.99998495575
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2732.2125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.resnets.0.conv2",
+      "type": "Conv2d",
+      "params": 3687040,
+      "shape": "(640, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.6116225e-05,
+        "mae": 0.0028752078,
+        "max_abs": 0.075245969,
+        "cos": 0.999985061775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2736.4300000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.resnets.1.time_emb_proj",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.7059925e-05,
+        "mae": 0.002416159725,
+        "max_abs": 0.054135411975,
+        "cos": 0.999985564075
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2734.35
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 3281920,
+      "shape": "(5120, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.71114e-05,
+        "mae": 0.003388818025,
+        "max_abs": 0.070603866125,
+        "cos": 0.999984229225
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2744.0975
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.7586125000000002e-05,
+        "mae": 0.003569199175,
+        "max_abs": 0.06697509997500001,
+        "cos": 0.999983703975
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2715.01
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.8016525e-05,
+        "mae": 0.003035466225,
+        "max_abs": 0.05844813865,
+        "cos": 0.999984839575
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2804.0725
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.proj_in",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.8045475e-05,
+        "mae": 0.00362199165,
+        "max_abs": 0.06362204625,
+        "cos": 0.9999832100749999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2707.245
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.proj_out",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.8221175e-05,
+        "mae": 0.003316567525,
+        "max_abs": 0.070442538725,
+        "cos": 0.9999827294
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3511.6099999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.proj_in",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.8459975e-05,
+        "mae": 0.002861605,
+        "max_abs": 0.079883903275,
+        "cos": 0.999984367475
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2700.6275
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.resnets.1.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 2.987295e-05,
+        "mae": 0.00191341655,
+        "max_abs": 0.057509727775,
+        "cos": 0.99998473575
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2751.445
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.proj_in",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.1169125e-05,
+        "mae": 0.003135581025,
+        "max_abs": 0.08172331005,
+        "cos": 0.9999814792
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2784.39
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.1673575e-05,
+        "mae": 0.003149753425,
+        "max_abs": 0.06028382575,
+        "cos": 0.999982435525
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2765.5950000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.2587025e-05,
+        "mae": 0.004082264775,
+        "max_abs": 0.063955400125,
+        "cos": 0.9999814438500001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2735.1600000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.3.resnets.1.conv1",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.2915e-05,
+        "mae": 0.0022819396,
+        "max_abs": 0.061348699025,
+        "cos": 0.999983180125
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2800.41
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.proj_out",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.4255825e-05,
+        "mae": 0.003416646175,
+        "max_abs": 0.0638661012,
+        "cos": 0.99997887565
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2707.2075
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.proj_out",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.5649325e-05,
+        "mae": 0.0047391029,
+        "max_abs": 0.0234146379,
+        "cos": 0.9999778421250001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2786.29
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 821760,
+      "shape": "(2560, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.565865e-05,
+        "mae": 0.0045558866,
+        "max_abs": 0.045085109750000005,
+        "cos": 0.99997744235
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2787.275
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 3281920,
+      "shape": "(5120, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.6187525e-05,
+        "mae": 0.0042541505499999995,
+        "max_abs": 0.0821467042,
+        "cos": 0.999978398475
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2752.605
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_q",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.6371124999999996e-05,
+        "mae": 0.00236163385,
+        "max_abs": 0.0675195083,
+        "cos": 0.9999812594
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2758.3475
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.6919175e-05,
+        "mae": 0.004829978,
+        "max_abs": 0.035527199499999995,
+        "cos": 0.999978862625
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2797.0725
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.proj_out",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.74422e-05,
+        "mae": 0.0048518686,
+        "max_abs": 0.0350457034,
+        "cos": 0.9999767526000001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2794.7775
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.0.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.9105075e-05,
+        "mae": 0.003491566625,
+        "max_abs": 0.09473655747500001,
+        "cos": 0.99997820645
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3513.0625
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.9259475e-05,
+        "mae": 0.004709717025,
+        "max_abs": 0.0497624278,
+        "cos": 0.999975589275
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2765.44
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 13117440,
+      "shape": "(10240, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 3.9397825e-05,
+        "mae": 0.003438501675,
+        "max_abs": 0.10630159827499999,
+        "cos": 0.999976978225
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2762.17
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.2.conv1",
+      "type": "Conv2d",
+      "params": 1843520,
+      "shape": "(320, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.1689225e-05,
+        "mae": 0.005085125,
+        "max_abs": 0.039251789475,
+        "cos": 0.999973871325
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2848.1175000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.proj_in",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.1993e-05,
+        "mae": 0.004875170999999999,
+        "max_abs": 0.058361210875,
+        "cos": 0.999973592475
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2749.1575
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.3404999999999995e-05,
+        "mae": 0.003953317475,
+        "max_abs": 0.072145542125,
+        "cos": 0.999975927425
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3487.605
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.38984e-05,
+        "mae": 0.0038254492499999997,
+        "max_abs": 0.08034632355,
+        "cos": 0.999975395775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3475.9075
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 13117440,
+      "shape": "(10240, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.430325e-05,
+        "mae": 0.004061242875,
+        "max_abs": 0.113322984425,
+        "cos": 0.99997386455
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3531.36
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.4851799999999996e-05,
+        "mae": 0.0051358511,
+        "max_abs": 0.044522911325,
+        "cos": 0.999971781225
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2764.5225
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.proj_in",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.6241075000000005e-05,
+        "mae": 0.00409037175,
+        "max_abs": 0.090229625825,
+        "cos": 0.99997404905
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3232.3575
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.2.conv2",
+      "type": "Conv2d",
+      "params": 921920,
+      "shape": "(320, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.7611499999999996e-05,
+        "mae": 0.005422373175,
+        "max_abs": 0.044805362825,
+        "cos": 0.99997114675
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2816.7650000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.0.conv1",
+      "type": "Conv2d",
+      "params": 29492480,
+      "shape": "(1280, 2560, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.7739100000000005e-05,
+        "mae": 0.0038556814,
+        "max_abs": 0.09523800575,
+        "cos": 0.99997399845
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3646.8375
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.787875e-05,
+        "mae": 0.00539820865,
+        "max_abs": 0.046575948575,
+        "cos": 0.999970336925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2781.245
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.resnets.1.conv1",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.7989100000000004e-05,
+        "mae": 0.003507183275,
+        "max_abs": 0.08315631,
+        "cos": 0.999975014125
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2776.5225
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 4.885385e-05,
+        "mae": 0.003562189025,
+        "max_abs": 0.101458996525,
+        "cos": 0.9999737219
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2761.8475
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.resnets.1.conv1",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.22786e-05,
+        "mae": 0.003031363975,
+        "max_abs": 0.07310536502500001,
+        "cos": 0.999972877825
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2829.9525000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.proj_in",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.24178e-05,
+        "mae": 0.00520435975,
+        "max_abs": 0.0744966827,
+        "cos": 0.9999677625250001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2728.61
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.0.conv1",
+      "type": "Conv2d",
+      "params": 11059840,
+      "shape": "(640, 1920, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.31047e-05,
+        "mae": 0.00400976445,
+        "max_abs": 0.1269144844,
+        "cos": 0.999968815875
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2785.8025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.687432500000001e-05,
+        "mae": 0.0035270278,
+        "max_abs": 0.08502364345,
+        "cos": 0.999969738975
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2785.335
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 821760,
+      "shape": "(2560, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.707285e-05,
+        "mae": 0.005900847475,
+        "max_abs": 0.0627413988,
+        "cos": 0.999964344225
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2777.2174999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 821760,
+      "shape": "(2560, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 5.764915e-05,
+        "mae": 0.0060609062,
+        "max_abs": 0.034320604025,
+        "cos": 0.999963525825
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2806.4125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_v",
+      "type": "Linear",
+      "params": 1638400,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.00686e-05,
+        "mae": 0.00287327705,
+        "max_abs": 0.077741716075,
+        "cos": 0.99996926815
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2768.0825
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.6290925e-05,
+        "mae": 0.0064620344,
+        "max_abs": 0.054132223125000004,
+        "cos": 0.99995945845
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2722.7225
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.proj_in",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.881205000000001e-05,
+        "mae": 0.0045737971,
+        "max_abs": 0.128076970575,
+        "cos": 0.9999598278
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2753.7
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.proj_in",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.8949625e-05,
+        "mae": 0.0064179967,
+        "max_abs": 0.082185387625,
+        "cos": 0.99995531215
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2802.2025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.1.conv_shortcut",
+      "type": "Conv2d",
+      "params": 205120,
+      "shape": "(320, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 6.9063375e-05,
+        "mae": 0.0065448450499999995,
+        "max_abs": 0.059595912675,
+        "cos": 0.999957582525
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2882.1625
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.0803625e-05,
+        "mae": 0.0070927773749999996,
+        "max_abs": 0.0376073718,
+        "cos": 0.99995677865
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2735.3925
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.resnets.0.conv1",
+      "type": "Conv2d",
+      "params": 1843840,
+      "shape": "(640, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.34825e-05,
+        "mae": 0.0037057145,
+        "max_abs": 0.095764301725,
+        "cos": 0.9999618439
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2732.1875
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 13117440,
+      "shape": "(10240, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.3835625e-05,
+        "mae": 0.003783475275,
+        "max_abs": 0.1262729913,
+        "cos": 0.999961488675
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3461.875
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.resnets.1.conv1",
+      "type": "Conv2d",
+      "params": 3687040,
+      "shape": "(640, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.38431e-05,
+        "mae": 0.00396316395,
+        "max_abs": 0.09671190195,
+        "cos": 0.9999612394
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2722.56
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.0.conv1",
+      "type": "Conv2d",
+      "params": 2765120,
+      "shape": "(320, 960, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.4563325e-05,
+        "mae": 0.006333177325,
+        "max_abs": 0.070599330575,
+        "cos": 0.9999535724499999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2809.525
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.resnets.0.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 7.6620875e-05,
+        "mae": 0.002960795925,
+        "max_abs": 0.09295471385000001,
+        "cos": 0.9999607493
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2802.1975
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 1639040,
+      "shape": "(640, 2560)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.2091275e-05,
+        "mae": 0.006630838125,
+        "max_abs": 0.08021665735,
+        "cos": 0.9999503
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2774.9425
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 1639040,
+      "shape": "(640, 2560)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 8.52141e-05,
+        "mae": 0.005898297775,
+        "max_abs": 0.0925821522,
+        "cos": 0.999943393775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2696.99
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 9.096625e-05,
+        "mae": 0.0041068176,
+        "max_abs": 0.1623294428,
+        "cos": 0.999951549725
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2747.06
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.0.conv_shortcut",
+      "type": "Conv2d",
+      "params": 307520,
+      "shape": "(320, 960, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 9.3155025e-05,
+        "mae": 0.007381319525,
+        "max_abs": 0.071125343425,
+        "cos": 0.999944568625
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2786.52
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000104116975,
+        "mae": 0.007227771225,
+        "max_abs": 0.095641134325,
+        "cos": 0.999937253825
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3187.625
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 1639040,
+      "shape": "(640, 2560)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00011094482500000001,
+        "mae": 0.0073207647,
+        "max_abs": 0.11898858844999999,
+        "cos": 0.99993392575
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2744.0125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000111362775,
+        "mae": 0.006271139324999999,
+        "max_abs": 0.118109596925,
+        "cos": 0.9999368682
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3444.39
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000111511925,
+        "mae": 0.0040797768,
+        "max_abs": 0.11438272892500001,
+        "cos": 0.9999427376750001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2743.34
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0001132609,
+        "mae": 0.00621706935,
+        "max_abs": 0.11934473365,
+        "cos": 0.99993374325
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2836.26
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.proj_in",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0001150046,
+        "mae": 0.006879092975,
+        "max_abs": 0.18525573237499998,
+        "cos": 0.9999292765
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3616.8925
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.proj_in",
+      "type": "Conv2d",
+      "params": 410240,
+      "shape": "(640, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00011706142499999999,
+        "mae": 0.0054303336249999995,
+        "max_abs": 0.120467197125,
+        "cos": 0.9999383804249999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2735.545
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000119368625,
+        "mae": 0.0061252662999999995,
+        "max_abs": 0.10322841999999999,
+        "cos": 0.99993591045
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2737.7349999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00012062425,
+        "mae": 0.0076813672,
+        "max_abs": 0.13154015315,
+        "cos": 0.9999293273500001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3515.5649999999996
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.resnets.2.conv_shortcut",
+      "type": "Conv2d",
+      "params": 205120,
+      "shape": "(320, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00012184525,
+        "mae": 0.008731043925000001,
+        "max_abs": 0.07711052894999999,
+        "cos": 0.99992516605
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2812.0299999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.resnets.0.conv_shortcut",
+      "type": "Conv2d",
+      "params": 205440,
+      "shape": "(640, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000124323725,
+        "mae": 0.005104286475,
+        "max_abs": 0.1291747801,
+        "cos": 0.9999344652
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2731.1825
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 821760,
+      "shape": "(2560, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0001263686,
+        "mae": 0.005591082575,
+        "max_abs": 0.122901499275,
+        "cos": 0.9999335718
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2750.0375
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000127205375,
+        "mae": 0.007147611125,
+        "max_abs": 0.14934369922500002,
+        "cos": 0.9999261164
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2753.9325
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.proj_in",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000131944675,
+        "mae": 0.006012788099999999,
+        "max_abs": 0.172859632425,
+        "cos": 0.999928527775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2730.81
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 6554880,
+      "shape": "(1280, 5120)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000136058425,
+        "mae": 0.006072027325,
+        "max_abs": 0.1493211277,
+        "cos": 0.9999276221
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2802.8475
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 410240,
+      "shape": "(640, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000138375025,
+        "mae": 0.00561217835,
+        "max_abs": 0.12315778155,
+        "cos": 0.9999264722
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2742.86
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00014681425,
+        "mae": 0.009538853525,
+        "max_abs": 0.04886129125,
+        "cos": 0.999913456375
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2819.385
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 13117440,
+      "shape": "(10240, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00014820045000000002,
+        "mae": 0.005845188649999999,
+        "max_abs": 0.13162950335,
+        "cos": 0.9999232906
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2805.655
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 1639040,
+      "shape": "(640, 2560)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000150185725,
+        "mae": 0.0069041529,
+        "max_abs": 0.23111632467499998,
+        "cos": 0.9999140513
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2735.31
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.3.resnets.0.conv1",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00015312785,
+        "mae": 0.00439796175,
+        "max_abs": 0.100052418175,
+        "cos": 0.999922215075
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2761.0
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00015622895,
+        "mae": 0.0059480603,
+        "max_abs": 0.18736898899999999,
+        "cos": 0.99991698255
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2738.6225
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.proj_in",
+      "type": "Conv2d",
+      "params": 102720,
+      "shape": "(320, 320, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00015719515,
+        "mae": 0.009953304175,
+        "max_abs": 0.0558052063,
+        "cos": 0.999903089925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2770.765
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0001600858,
+        "mae": 0.005848481925,
+        "max_abs": 0.141350939875,
+        "cos": 0.999916548775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2729.4775
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 102720,
+      "shape": "(320, 320)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00016565155,
+        "mae": 0.0044142198,
+        "max_abs": 0.10882647475,
+        "cos": 0.99991508785
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2745.245
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000166069275,
+        "mae": 0.0062889845,
+        "max_abs": 0.18988762425,
+        "cos": 0.99991067995
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2719.94
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.resnets.1.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000176621125,
+        "mae": 0.005008204675,
+        "max_abs": 0.1374719888,
+        "cos": 0.9999092169
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2775.4875
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 3281920,
+      "shape": "(5120, 640)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000177752575,
+        "mae": 0.007547719175,
+        "max_abs": 0.147350024425,
+        "cos": 0.9999029671749999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2728.21
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 245760,
+      "shape": "(320, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0001901437,
+        "mae": 0.005296865925,
+        "max_abs": 0.108791199525,
+        "cos": 0.999902337975
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2721.025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.0.conv_shortcut",
+      "type": "Conv2d",
+      "params": 3278080,
+      "shape": "(1280, 2560, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00019231907499999998,
+        "mae": 0.0072131952,
+        "max_abs": 0.219422351575,
+        "cos": 0.999897083725
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3470.665
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.3.resnets.0.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000192634775,
+        "mae": 0.00487757215,
+        "max_abs": 0.11018657685,
+        "cos": 0.999901239525
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2771.2375
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00020314125,
+        "mae": 0.010877696775000001,
+        "max_abs": 0.092337317775,
+        "cos": 0.999880347675
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2796.6575000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.downsamplers.0.conv",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0002075223,
+        "mae": 0.007936537725,
+        "max_abs": 0.173986047525,
+        "cos": 0.999886296375
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2758.6225
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00021425435,
+        "mae": 0.010107704825000001,
+        "max_abs": 0.2079656571,
+        "cos": 0.999864641375
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3545.95
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.proj_in",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000234349075,
+        "mae": 0.008809481875,
+        "max_abs": 0.174456294625,
+        "cos": 0.99986977925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2785.96
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.resnets.0.conv1",
+      "type": "Conv2d",
+      "params": 921920,
+      "shape": "(320, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000236705225,
+        "mae": 0.008498748175,
+        "max_abs": 0.1510271728,
+        "cos": 0.999874230175
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2708.98
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.1.conv_shortcut",
+      "type": "Conv2d",
+      "params": 819840,
+      "shape": "(640, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000267538625,
+        "mae": 0.010062197225,
+        "max_abs": 0.14386227355,
+        "cos": 0.999838108925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2751.055
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.resnets.0.conv2",
+      "type": "Conv2d",
+      "params": 14746880,
+      "shape": "(1280, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000286067975,
+        "mae": 0.0075781296,
+        "max_abs": 0.2071135789,
+        "cos": 0.99985245125
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2787.14
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.resnets.0.conv2",
+      "type": "Conv2d",
+      "params": 921920,
+      "shape": "(320, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00029236875000000003,
+        "mae": 0.01022060575,
+        "max_abs": 0.19644293935,
+        "cos": 0.999834474775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2712.54
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.resnets.0.time_emb_proj",
+      "type": "Linear",
+      "params": 819840,
+      "shape": "(640, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00032821907499999995,
+        "mae": 0.008293138925,
+        "max_abs": 0.219691691925,
+        "cos": 0.9998242431
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2733.5275
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.resnets.0.conv_shortcut",
+      "type": "Conv2d",
+      "params": 820480,
+      "shape": "(1280, 640, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0003413667,
+        "mae": 0.00771082545,
+        "max_abs": 0.18763474375,
+        "cos": 0.99982390695
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2773.395
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 6554880,
+      "shape": "(1280, 5120)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0003420213,
+        "mae": 0.01012974475,
+        "max_abs": 0.24302009492499999,
+        "cos": 0.9998143344
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3449.47
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.downsamplers.0.conv",
+      "type": "Conv2d",
+      "params": 921920,
+      "shape": "(320, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00035970037500000003,
+        "mae": 0.008432671775000001,
+        "max_abs": 0.18967994862499998,
+        "cos": 0.999814862175
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2721.0950000000003
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000363389775,
+        "mae": 0.01333578025,
+        "max_abs": 0.188905883575,
+        "cos": 0.999781295425
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3436.6525
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "type": "Linear",
+      "params": 13117440,
+      "shape": "(10240, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000363658375,
+        "mae": 0.0071876325,
+        "max_abs": 0.182828482225,
+        "cos": 0.999812853875
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2794.8125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.resnets.1.conv2",
+      "type": "Conv2d",
+      "params": 921920,
+      "shape": "(320, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000369681875,
+        "mae": 0.007328996725,
+        "max_abs": 0.19488849490000001,
+        "cos": 0.99980845685
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2722.9475
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0003725273,
+        "mae": 0.0094363204,
+        "max_abs": 0.2303367611,
+        "cos": 0.99980693865
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2772.61
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 6554880,
+      "shape": "(1280, 5120)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00038398465,
+        "mae": 0.00989421095,
+        "max_abs": 0.258153587575,
+        "cos": 0.999797131825
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2763.7574999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00039422605000000003,
+        "mae": 0.007996633925,
+        "max_abs": 0.21885410509999997,
+        "cos": 0.999798733725
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2749.7
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.0.conv_shortcut",
+      "type": "Conv2d",
+      "params": 1229440,
+      "shape": "(640, 1920, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000396129825,
+        "mae": 0.0121844199,
+        "max_abs": 0.2930018157,
+        "cos": 0.999768131125
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2733.5249999999996
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0004154755,
+        "mae": 0.01106812855,
+        "max_abs": 0.2490531132,
+        "cos": 0.9997762987250001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2810.225
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.proj_out",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0004370175,
+        "mae": 0.0086929923,
+        "max_abs": 0.2715078071,
+        "cos": 0.999771161025
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2756.9049999999997
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000464349,
+        "mae": 0.010613759275,
+        "max_abs": 0.29753151535,
+        "cos": 0.99976062155
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2761.2975
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00055088005,
+        "mae": 0.016368221500000002,
+        "max_abs": 0.221944756775,
+        "cos": 0.99967662945
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2723.15
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00055408615,
+        "mae": 0.016434740475,
+        "max_abs": 0.3109043278,
+        "cos": 0.9996841766
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3588.625
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.resnets.2.conv1",
+      "type": "Conv2d",
+      "params": 22119680,
+      "shape": "(1280, 1920, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00063554955,
+        "mae": 0.015597370000000001,
+        "max_abs": 0.368600875175,
+        "cos": 0.99964299955
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3588.2125
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 6554880,
+      "shape": "(1280, 5120)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.000657338525,
+        "mae": 0.01731696445,
+        "max_abs": 0.22729390859999998,
+        "cos": 0.999540520975
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2754.525
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0006739596999999999,
+        "mae": 0.01660780145,
+        "max_abs": 0.279083915025,
+        "cos": 0.9995620636
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2762.1775
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.2.resnets.1.conv1",
+      "type": "Conv2d",
+      "params": 7373440,
+      "shape": "(640, 1280, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0009025646250000001,
+        "mae": 0.0163631517,
+        "max_abs": 0.236140429975,
+        "cos": 0.9994462212499999
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2742.6775
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 6554880,
+      "shape": "(1280, 5120)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0009287585749999999,
+        "mae": 0.018853158449999997,
+        "max_abs": 0.31655588745,
+        "cos": 0.999308706
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 3477.9325
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 491520,
+      "shape": "(640, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0009555697,
+        "mae": 0.01299958735,
+        "max_abs": 0.28558169305,
+        "cos": 0.99950269705
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2752.4725
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "conv_in",
+      "type": "Conv2d",
+      "params": 11840,
+      "shape": "(320, 4, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0010267917250000001,
+        "mae": 0.015787623375,
+        "max_abs": 0.3304988444,
+        "cos": 0.99946186495
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2722.4875
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0015628398249999999,
+        "mae": 0.02107603545,
+        "max_abs": 0.47065761685,
+        "cos": 0.999191663525
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2768.91
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.proj_out",
+      "type": "Conv2d",
+      "params": 1639680,
+      "shape": "(1280, 1280, 1, 1)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00175287145,
+        "mae": 0.015605489725,
+        "max_abs": 0.456202507,
+        "cos": 0.999097688425
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2770.7325
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.resnets.0.conv1",
+      "type": "Conv2d",
+      "params": 7374080,
+      "shape": "(1280, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.001852244975,
+        "mae": 0.01429313065,
+        "max_abs": 0.37759548425,
+        "cos": 0.999051012875
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2789.64
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "conv_out",
+      "type": "Conv2d",
+      "params": 11524,
+      "shape": "(4, 320, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00208243965,
+        "mae": 0.035700082775,
+        "max_abs": 0.184784978625,
+        "cos": 0.998772091
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2845.9575
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_k",
+      "type": "Linear",
+      "params": 983040,
+      "shape": "(1280, 768)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0025174845500000004,
+        "mae": 0.0173365697,
+        "max_abs": 0.3987308815,
+        "cos": 0.998709449925
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2765.96
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.resnets.0.time_emb_proj",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.003434238575,
+        "mae": 0.016684916525,
+        "max_abs": 0.423958733675,
+        "cos": 0.9982412525
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2774.815
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "type": "Linear",
+      "params": 1639680,
+      "shape": "(1280, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00500428185,
+        "mae": 0.021414457350000003,
+        "max_abs": 0.644164651625,
+        "cos": 0.997434538775
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2771.24
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.0.resnets.0.time_emb_proj",
+      "type": "Linear",
+      "params": 409920,
+      "shape": "(320, 1280)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.00687851835,
+        "mae": 0.041207728425,
+        "max_abs": 1.15143672375,
+        "cos": 0.996422953
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2724.8825
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 6554880,
+      "shape": "(1280, 5120)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.0081090473,
+        "mae": 0.05174021425,
+        "max_abs": 1.38629134,
+        "cos": 0.9956373511500001
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2774.09
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.ff.net.2",
+      "type": "Linear",
+      "params": 1639040,
+      "shape": "(640, 2560)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.01171222145,
+        "mae": 0.0527455178,
+        "max_abs": 2.1779806465,
+        "cos": 0.9935189283
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2746.0025
+      },
+      "peak_mem_MB": NaN
+    },
+    {
+      "layer": "down_blocks.1.downsamplers.0.conv",
+      "type": "Conv2d",
+      "params": 3687040,
+      "shape": "(640, 640, 3, 3)",
+      "recommended_mode": "W8A8",
+      "w_bits": 8,
+      "a_bits": 8,
+      "metrics": {
+        "mse": 0.035968182875,
+        "mae": 0.078161895275,
+        "max_abs": 1.234800156225,
+        "cos": 0.981408591825
+      },
+      "timing_ms": {
+        "baseline": 2910.9725,
+        "layer": 2730.8199999999997
+      },
+      "peak_mem_MB": NaN
+    }
+  ]
+}

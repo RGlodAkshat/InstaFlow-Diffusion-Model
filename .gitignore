@@ -1,27 +1,39 @@
-# Ignore Python cache and virtual environments
+# -----------------------------
+# Python / env / build noise
+# -----------------------------
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
+*.egg-info/
+*.egg
+dist/
+build/
+pip-wheel-metadata/
 *.log
 
-# Ignore local environment folders
+# Virtual environments
+.env/
+.env.*/
 env/
 venv/
-instaflow_cpu/
+.venv/
 .instaflow_cpu/
-*.egg-info/
-*.idea/
+instaflow_cpu/
+
+# IDE / OS
 .vscode/
+.idea/
+.DS_Store
+Thumbs.db
 
-# Ignore model artifacts and outputs
-artifacts_onnx/
-out/
-out_images/
-Output_Images/
-runs/
+# Jupyter
+.ipynb_checkpoints/
 
-# Ignore large generated files (models, checkpoints, weights)
+# -----------------------------
+# Project artifacts & outputs
+# -----------------------------
+# ONNX + external data + weights
 *.onnx
 *.data
 *.safetensors
@@ -29,14 +41,28 @@ runs/
 *.pt
 *.bin
 
-# Ignore temporary and intermediate data
+# ORT / export artifacts & runs
+artifacts_onnx/
+runs/
 tmp/
 tmp_quant/
 *.tmp
 *.bak
-*.DS_Store
-Thumbs.db
 
-# Ignore notebooks checkpoints
-.ipynb_checkpoints/
+# # Images & intermediate outputs
+# out/
+# out_images/
+# Output_Images/
+# quant_reports/
 
+
+# Optional: keep only final quantization plan (uncomment to track)
+# !quant_scout_results/unet_quant_scout_plan.csv
+# !quant_scout_results/unet_quant_scout_plan.json
+
+# Optional: keep the main notebook & core source
+!InstaFlow.ipynb
+!Rectified.py
+
+# Optional: keep a tiny demo ONNX block if you need it in repo
+# !tinyblock.onnx

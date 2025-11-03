@@ -1,13 +1,13 @@
 index,image_path,prompt,clip_score
-1,Output_Images/qantized_clip_01.png,a cute dog,17.852587
-2,Output_Images/qantized_clip_02.png,a beautiful mountain,17.689964
-3,Output_Images/qantized_clip_03.png,a bowl of fruit,18.538816
-4,Output_Images/qantized_clip_04.png,a happy cat,15.322680
-5,Output_Images/qantized_clip_05.png,a sunset over the ocean,19.344606
-6,Output_Images/qantized_clip_06.png,a man riding a bike,20.641336
-7,Output_Images/qantized_clip_07.png,a delicious pizza,23.085741
-8,Output_Images/qantized_clip_08.png,a child playing football,18.227222
-9,Output_Images/qantized_clip_09.png,a red sports car,19.976479
-10,Output_Images/qantized_clip_10.png,a flower in the rain,25.774857
+1,Output_Images/Model_2/quantized_clip_01.png,a cute dog,16.765829
+2,Output_Images/Model_2/quantized_clip_02.png,a beautiful mountain,21.001265
+3,Output_Images/Model_2/quantized_clip_03.png,a bowl of fruit,26.018984
+4,Output_Images/Model_2/quantized_clip_04.png,a happy cat,17.387564
+5,Output_Images/Model_2/quantized_clip_05.png,a sunset over the ocean,16.744003
+6,Output_Images/Model_2/quantized_clip_06.png,a man riding a bike,22.417414
+7,Output_Images/Model_2/quantized_clip_07.png,a delicious pizza,14.525743
+8,Output_Images/Model_2/quantized_clip_08.png,a child playing football,21.492722
+9,Output_Images/Model_2/quantized_clip_09.png,a red sports car,21.785122
+10,Output_Images/Model_2/quantized_clip_10.png,a flower in the rain,22.475573
 
-avg,,,19.645429
+avg,,,20.061422

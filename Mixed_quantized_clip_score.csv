@@ -1,0 +1,13 @@
+index,image_path,prompt,clip_score,time_ms
+1,Output_Images/Final_Model/Mixed_01.png,a cute dog,22.480997,9021.86
+2,Output_Images/Final_Model/Mixed_02.png,a beautiful mountain,21.017759,9812.57
+3,Output_Images/Final_Model/Mixed_03.png,a bowl of fruit,24.714418,10541.08
+4,Output_Images/Final_Model/Mixed_04.png,a happy cat,20.062140,11671.47
+5,Output_Images/Final_Model/Mixed_05.png,a sunset over the ocean,23.475250,14388.60
+6,Output_Images/Final_Model/Mixed_06.png,a man riding a bike,21.076283,22170.22
+7,Output_Images/Final_Model/Mixed_07.png,a delicious pizza,23.986320,18339.53
+8,Output_Images/Final_Model/Mixed_08.png,a child playing football,24.917778,16744.71
+9,Output_Images/Final_Model/Mixed_09.png,a red sports car,25.247818,12599.46
+10,Output_Images/Final_Model/Mixed_10.png,a flower in the rain,26.036274,12559.79
+
+avg,,,23.301504,13784.93

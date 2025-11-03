@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quantization of InstaFlow Model — IE 643 Course Project</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">🌀</div>
+      <h1>InstaFlow Compare</h1>
+    </div>
+    <nav class="header-actions">
+      <button id="btnHelp" class="ghost" title="Help / About" aria-label="Help">?</button>
+    </nav>
+  </header>
+
+  <!-- Project title -->
+  <section class="project-banner">
+    <h1>Quantization Of InstaFlow Model</h1>
+    <h2>IE 643 Course Project</h2>
+    <p class="team"><strong>Team:</strong> Sota &nbsp; | &nbsp; <strong>Members:</strong> Akshat Kumar (22B4513), Anirudh Shinde (22B2181)</p>
+  </section>
+
+  <!-- Minimal controls -->
+  <section class="panel controls controls--compact" aria-labelledby="controls-title">
+    <h2 id="controls-title">Generate (512×512, Baseline vs Quantized)</h2>
+    <form id="promptForm" novalidate>
+      <div class="controls-row">
+        <div class="field grow">
+          <label for="prompt">Prompt</label>
+          <textarea id="prompt" name="prompt" rows="3" minlength="3" maxlength="500" required
+            placeholder="a scenic mountain lake with pine trees, photorealistic, ultra-detailed"></textarea>
+        </div>
+        <div class="field seed">
+          <label for="seed">Seed (optional)</label>
+          <input id="seed" name="seed" type="number" min="0" max="4294967295" placeholder="random" />
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btnGenerate" class="primary" type="submit">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="label">Generate Both</span>
+        </button>
+        <button id="btnClear" class="ghost" type="button">Clear</button>
+        <div id="formError" class="error-banner" role="alert" aria-live="polite" hidden></div>
+      </div>
+    </form>
+  </section>
+
+  <!-- Results: two fixed 512×512 panes -->
+  <main class="panel results" aria-labelledby="results-title">
+    <h2 id="results-title">Comparison</h2>
+
+    <div id="compareRow" class="compare-row">
+      <!-- Baseline -->
+      <article class="card" id="card-baseline">
+        <div class="card-head">
+          <span class="model-tag">Baseline</span>
+          <div class="tagline">RectifiedFlow (CPU)</div>
+        </div>
+        <div class="image-box">
+          <img id="img-baseline" alt="Baseline image" width="512" height="512" />
+        </div>
+        <div class="metrics">
+          <div class="kv"><div class="k">Latency</div><div class="v" id="latency-baseline">—</div></div>
+          <div class="kv"><div class="k">CLIP Score</div><div class="v" id="clip-baseline">—</div></div>
+          <div class="links">
+            <a id="open-baseline" class="ghost" target="_blank" rel="noopener" hidden>Open</a>
+            <a id="dl-baseline" class="ghost" download hidden>Download</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Quantized -->
+      <article class="card" id="card-quantized">
+        <div class="card-head">
+          <span class="model-tag quantized">Quantized</span>
+          <div class="tagline">ONNX Mixed Precision (CPU)</div>
+        </div>
+        <div class="image-box">
+          <img id="img-quantized" alt="Quantized image" width="512" height="512" />
+        </div>
+        <div class="metrics">
+          <div class="kv"><div class="k">Latency</div><div class="v" id="latency-quantized">—</div></div>
+          <div class="kv"><div class="k">CLIP Score</div><div class="v" id="clip-quantized">—</div></div>
+          <div class="links">
+            <a id="open-quantized" class="ghost" target="_blank" rel="noopener" hidden>Open</a>
+            <a id="dl-quantized" class="ghost" download hidden>Download</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div id="emptyState" class="empty">
+      <p>Enter a prompt and click <strong>Generate Both</strong> to compare 512×512 outputs.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="left">Your data. Your business.</div>
+    <div class="right">v1.2 • Baseline vs Quantized • 512×512</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <dialog id="helpDialog">
+    <form method="dialog">
+      <h3>About</h3>
+      <p>This UI always runs both models at 512×512 and shows latency + CLIP score.</p>
+      <button class="primary">Close</button>
+    </form>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

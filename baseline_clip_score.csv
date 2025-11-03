@@ -1,13 +1,13 @@
-index,image_path,prompt,clip_score
-1,Output_Images/clip_01.png,a cute dog,23.482601
-2,Output_Images/clip_02.png,a beautiful mountain,22.395870
-3,Output_Images/clip_03.png,a bowl of fruit,23.266640
-4,Output_Images/clip_04.png,a happy cat,18.415298
-5,Output_Images/clip_05.png,a sunset over the ocean,23.705929
-6,Output_Images/clip_06.png,a man riding a bike,19.801579
-7,Output_Images/clip_07.png,a delicious pizza,22.462486
-8,Output_Images/clip_08.png,a child playing football,24.022867
-9,Output_Images/clip_09.png,a red sports car,23.099577
-10,Output_Images/clip_10.png,a flower in the rain,26.655272
+index,image_path,prompt,clip_score,time_ms
+1,Output_Images/Baseline/fp_01.png,a cute dog,24.117867,15822.38
+2,Output_Images/Baseline/fp_02.png,a beautiful mountain,21.408955,13082.11
+3,Output_Images/Baseline/fp_03.png,a bowl of fruit,22.234621,13755.93
+4,Output_Images/Baseline/fp_04.png,a happy cat,20.388926,13319.74
+5,Output_Images/Baseline/fp_05.png,a sunset over the ocean,22.164085,11745.21
+6,Output_Images/Baseline/fp_06.png,a man riding a bike,21.475748,25290.54
+7,Output_Images/Baseline/fp_07.png,a delicious pizza,23.426937,25470.14
+8,Output_Images/Baseline/fp_08.png,a child playing football,24.301390,24468.59
+9,Output_Images/Baseline/fp_09.png,a red sports car,25.212091,21197.77
+10,Output_Images/Baseline/fp_10.png,a flower in the rain,25.872398,13909.05
 
-avg,,,22.730812
+avg,,,23.060302,17806.15

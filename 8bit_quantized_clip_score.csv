@@ -1,13 +1,13 @@
-index,image_path,prompt,clip_score
-1,Output_Images/8bit)qantized_clip_01.png,a cute dog,19.395927
-2,Output_Images/8bit)qantized_clip_02.png,a beautiful mountain,21.351572
-3,Output_Images/8bit)qantized_clip_03.png,a bowl of fruit,22.975067
-4,Output_Images/8bit)qantized_clip_04.png,a happy cat,18.247597
-5,Output_Images/8bit)qantized_clip_05.png,a sunset over the ocean,23.738823
-6,Output_Images/8bit)qantized_clip_06.png,a man riding a bike,21.781580
-7,Output_Images/8bit)qantized_clip_07.png,a delicious pizza,22.632364
-8,Output_Images/8bit)qantized_clip_08.png,a child playing football,22.758011
-9,Output_Images/8bit)qantized_clip_09.png,a red sports car,22.516544
-10,Output_Images/8bit)qantized_clip_10.png,a flower in the rain,27.141159
+index,image_path,prompt,clip_score,time_ms
+1,Output_Images/Final_Model/int8_01.png,a cute dog,22.480997,8149.56
+2,Output_Images/Final_Model/int8_02.png,a beautiful mountain,21.017759,8922.78
+3,Output_Images/Final_Model/int8_03.png,a bowl of fruit,24.714418,12535.28
+4,Output_Images/Final_Model/int8_04.png,a happy cat,20.062140,13088.15
+5,Output_Images/Final_Model/int8_05.png,a sunset over the ocean,23.475250,11397.76
+6,Output_Images/Final_Model/int8_06.png,a man riding a bike,21.076283,11953.12
+7,Output_Images/Final_Model/int8_07.png,a delicious pizza,23.986320,9568.36
+8,Output_Images/Final_Model/int8_08.png,a child playing football,24.917778,9231.82
+9,Output_Images/Final_Model/int8_09.png,a red sports car,25.247818,17882.25
+10,Output_Images/Final_Model/int8_10.png,a flower in the rain,26.036274,12702.24
 
-avg,,,22.253864
+avg,,,23.301504,11543.13
