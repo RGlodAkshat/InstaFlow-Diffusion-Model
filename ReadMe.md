@@ -74,7 +74,7 @@ This repository contains:
    ```powershell
    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
    & "C:\Games\Instaflow\instaflow_cpu\Scripts\Activate.ps1"
-````
+   ````
 
 2. **Launch Jupyter**
 
